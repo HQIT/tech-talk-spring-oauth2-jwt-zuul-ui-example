@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+HELLO, WORKS
+
+<script>
+if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...
+	httpRequest = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE 6 and older
+	httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+httpRequest.onreadystatechange = function() {
+	console.log(httpRequest.readyState);
+	if (httpRequest.readyState === XMLHttpRequest.DONE) {
+		if (httpRequest.status === 200) {
+			console.log(httpRequest.responseText);
+		} else {
+			console.log('There was a problem with the request.');
+		}
+	}
+}
+
+httpRequest.open('GET', 'http://localhost:8802/api/test', true);
+httpRequest.send();
+</script>
+</body>
+</html>

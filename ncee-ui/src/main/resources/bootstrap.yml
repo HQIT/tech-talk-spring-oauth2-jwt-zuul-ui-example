@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: radar-gateway
+    
+server:
+  port: 8802

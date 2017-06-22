@@ -1,0 +1,11 @@
+logging:
+  level:
+     org:
+       springframework:
+         security: DEBUG
+spring:
+  thymeleaf:
+    cache: false
+    
+server:
+  context-path: /uaa

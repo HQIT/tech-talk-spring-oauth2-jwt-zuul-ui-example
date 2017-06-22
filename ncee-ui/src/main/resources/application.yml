@@ -1,0 +1,27 @@
+logging:
+  level:
+     org:
+       springframework:
+         security: DEBUG
+#       hibernate: DEBUG
+zuul:
+  routes:
+    apis:
+      path: /api/**
+      url: http://localhost:8806
+    auth:
+      path: /
+      url: http://localhost:8802
+
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8804/uaa/oauth/token
+      user-authorization-uri: http://localhost:8804/uaa/oauth/authorize
+      client-id: web_app
+      client-secret: secret
+    resource:
+      jwt:
+        key-value: 123
