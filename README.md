@@ -27,6 +27,8 @@ provide an api ``/test`` saying ``HELLO, WORKS``
 
 ## IMPORTANT
 
+* missing ``com.cloume.common`` packages can be found in repo ``https://github.com/HQIT/maven-repo`` (Issue #2)
+
 * if ui-server and oauth2-server launched on the same host (even not on the same port), should set one of servers' context-path to anything but ``/``, cuz ``Set-Cookie`` will override each other, make login fail (error log say some CSRF exception, not that). actually JSESSIONID change make the OAuthClientContext re-generated is the real reason
 
 * JWT, symmetric key (123) used in example, un-symmetric one should be better! embedded **.jks** in project, tutorials available on google (or bing.com) and other SE.
